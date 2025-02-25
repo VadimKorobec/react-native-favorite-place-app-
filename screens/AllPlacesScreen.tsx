@@ -1,7 +1,12 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
+import PlacesList from "../components/Places/PlacesList";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const AllPlacesScreen = () => {
-  return <Text>All Places Screen</Text>;
+  const { places } = useSelector((state: RootState) => state.places);
+
+  return <PlacesList places={places} />;
 };
 
 export default AllPlacesScreen;
