@@ -1,12 +1,9 @@
- type Location = {
-  lat: number;
-  lng: number;
-};
+import { LocationCoords } from "./locationCoords";
 
 export type Place = {
   id: string;
   title: string;
   imageUri: string;
   address: string;
-  location: Location;
+  location: LocationCoords;
 };

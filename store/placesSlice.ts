@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Place } from "../types/place";
 
 interface placesState {
@@ -12,9 +12,13 @@ const initialState: placesState = {
 const placesSlice = createSlice({
   name: "places",
   initialState,
-  reducers: {},
+  reducers: {
+    addPlace: (state, action: PayloadAction<Place>) => {
+      state.places = [...state.places, action.payload];
+    },
+  },
 });
 
-export const {} = placesSlice.actions;
+export const {addPlace} = placesSlice.actions;
 
 export const placesReducer = placesSlice.reducer;

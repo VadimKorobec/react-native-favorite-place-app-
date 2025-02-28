@@ -1,4 +1,5 @@
 type RootStackParamList = {
-    AllPlaces: undefined;
-    AddPlace: undefined;
+  AllPlaces: undefined;
+  AddPlace?: { pickedLat: number; pickedLng: number };
+  Map: undefined;
 };
